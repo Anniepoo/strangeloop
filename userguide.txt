@@ -1,0 +1,11 @@
+---+ "So You Want to Make Prolog Web Apps?"
+
+---++ A user guide.
+
+---+++ Devoid of any meaningful content.
+
+Because this is just an example after all.
+
+---++++ Well, here's a bit of content.
+
+* [[http_handler/3]]
