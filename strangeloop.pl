@@ -33,7 +33,7 @@ strangeloop_server :- strangeloop_server(7777).
 %	@arg Port the port number to start on
 %
 strangeloop_server(Port) :-
-	format('Starting strangeloop server on ~w\n', [Port]),
+	format('Starting strangeloop server on ~w', [Port]),
         http_server(http_dispatch, [port(Port)]).
 % The magic happens on the line above. It starts the server
 % and passes it the callback that dispatches requests to handlers
