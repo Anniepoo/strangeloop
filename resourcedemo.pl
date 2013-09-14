@@ -32,4 +32,7 @@ a_handler(_Request) :-
 	     \html_requires(files('specialstyle.css')),
 	     p('This para is green')]).
 
+%
+% define that specialstyle.css needs gradstyle.css
+%
 :- html_resource(files('specialstyle.css'), [requires(files('gradstyle.css'))]).

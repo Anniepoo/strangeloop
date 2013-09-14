@@ -423,12 +423,6 @@ timing(troubleshoot, 15).
 %%	priority(-Name:atom, -Score:number) is det
 priority(troubleshoot, 100).
 
-section_head(pldoc_intro,
-	     'Intro to PLDoc',
-	     '/help/source/').
-timing(pldoc_intro, 5).
-priority(pldoc_intro, 10).
-
 section_head(starting_the_server,
 	     'The Multithreaded Server',
 	     'debug.pl').
@@ -443,6 +437,12 @@ subsection(starting_the_server, 'The http_server call').
 section_image(starting_the_server,
 	      'organization.png',
 	      'Overall Server Organization').
+
+section_head(pldoc_intro,
+	     'Intro to PLDoc',
+	     '/help/source/').
+timing(pldoc_intro, 5).
+priority(pldoc_intro, 10).
 
 section_head(environment_setup,
 	     'Making A Comfy Environment',
