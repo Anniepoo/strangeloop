@@ -8,15 +8,19 @@
 % Make sure we're on a reasonable version
 %
 
+%%	reasonable_version is nondet
+%
+%	succeeds if our version is 6.4.1 or better
+%
 reasonable_version :-
 	current_prolog_flag(version_data, swi(Major, _, _)),
 	Major > 6.
 reasonable_version :-
 	current_prolog_flag(version_data, swi(6, Minor, _, _)),
-	Minor > 4.
+	Minor > 3.
 reasonable_version :-
-	current_prolog_flag(version_data, swi(6, 4, Patch, _)),
-	Patch > 0.
+	current_prolog_flag(version_data, swi(6, 3, Patch, _)),
+	Patch > 18.
 
 check_version :- reasonable_version, !.
 check_version :-
