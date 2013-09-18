@@ -91,12 +91,13 @@ start_form -->
 sections -->
 	{
 	    time_remaining(Time),
+	    MissionTime is floor(180 - Time),
             bagof(Name, A^B^section_head(Name, A, B), Names),
             time_restricted_unfinished_sections(Time, Names, WeWillCover, _),
             !
         },
-	html([p([\wall_time, ' time remains ', Time])]),   % DEBUG
-	section(0, Names, WeWillCover, false).
+	html([p([\wall_time, ' time remains ', Time])]),
+	section(MissionTime, Names, WeWillCover, false).
 
 
 %%	section(+StartAt:time, +Names:list, +WeWillCover:list,
@@ -415,6 +416,16 @@ latest_start_time(Time) :-
 	section_image/3.
 
 %%	section_head(-Name:atom, -Desc:atom, -File:atom) is det
+%
+section_head(intro, 'Workshop Organization', 'workshop.pl').
+timing(intro, 5).
+priority(intro, 100).
+subsection(intro, 'Look at code for a server').
+subsection(intro, 'Play while I jabber at you').
+subsection(intro, 'Feel free to interrupt, that\'s the point').
+subsection(intro, 'Getting to the end on time is minor').
+subsection(intro, 'workshop page').
+
 section_head(troubleshoot,
 	     'Get everybody running',
 	     'debug.pl').
@@ -430,7 +441,8 @@ timing(starting_the_server, 10).
 priority(starting_the_server, 50).
 
 %%	subsection(-Name:atom, -Desc:atom) is det
-subsection(starting_the_server, 'The \'usual project files\'').
+subsection(starting_the_server, 'We are our own web server').
+subsection(starting_the_server, 'The \'usual project files\' and load sequence').
 subsection(starting_the_server, 'We piggyback the pldoc server during dev mode').
 subsection(starting_the_server, 'The http_server call').
 %%	section_image(-Name:atom, -File:atom, -Desc:atom) is det
@@ -450,7 +462,7 @@ section_head(environment_setup,
 timing(environment_setup, 10).
 priority(environment_setup, 25).
 subsection(environment_setup, portray_text).
-subsection(environment_setup, 'Firing up editor and opening pages').
+subsection(environment_setup, 'Firing up editor and opening pages automatically').
 subsection(environment_setup, 'Some editor tricks').
 subsection(environment_setup, 'Prolog Navigator, other IDE tools').
 subsection(environment_setup, 'Abstract URI and file paths').
@@ -473,7 +485,7 @@ priority(break1, 100).
 
 section_head(html_generation_path,
 	     'The HTML Generation Sequence',
-	     'fancy_handlers.pl').
+	     'html_handlers.pl').
 timing(html_generation_path, 10).
 priority(html_generation_path, 50).
 section_image(html_generation_path,
@@ -485,6 +497,10 @@ section_head(html_generation,
 	     'html_handlers.pl').
 timing(html_generation, 20).
 priority(html_generation, 80).
+subsection(html_generation, 'Two Camps - templates and homoiconic').
+subsection(html_generation, 'DCGs').
+subsection(html_generation, 'Termerized HTML syntax').
+subsection(html_generation, 'Exercise').
 
 section_head(html_inclusions,
 	     'Inclusions',

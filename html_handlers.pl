@@ -115,7 +115,7 @@ an_inclusion_with_qq -->
         },
 	html([
 	    p('the next para is from quasiquotes'),
-	    {|html(Foo)||<p>Foo</p>|}
+	    html({|html(Foo)||<p>Foo</p>|})
 	]).
 
 

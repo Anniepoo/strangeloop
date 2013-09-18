@@ -13,7 +13,7 @@
 %	succeeds if our version is 6.4.1 or better
 %
 reasonable_version :-
-	current_prolog_flag(version_data, swi(Major, _, _)),
+	current_prolog_flag(version_data, swi(Major, _, _, _)),
 	Major > 6.
 reasonable_version :-
 	current_prolog_flag(version_data, swi(6, Minor, _, _)),
