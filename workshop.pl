@@ -213,6 +213,14 @@ section_images(Name, Done) -->
 	section_images(Name, [File | Done]).
 section_images(_, _) --> [].
 
+show_jan_bug.
+
+img_fix(Attribs, Contents) -->
+	{
+           show_jan_bug
+        },
+	html(img(Attribs, Contents)).
+
 img_fix(Attribs, Contents) -->
 	{
     % Hack! html_write:attributes poorly exposed
