@@ -45,7 +45,7 @@ howdy('howdy', 'Kansan').
 howdy('salut', 'French').
 howdy('guten tag', 'German').
 howdy('shalom', 'Hebrew').
-howdy('ciào', 'Italian').
+howdy('ciao', 'Italian').
 howdy('coi', 'Lojban').
 
 %

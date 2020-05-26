@@ -54,8 +54,9 @@ user:file_search_path(js, assets).
 %
 clippy(Generator) -->
 	{
-             (	  call(Generator, character(Char)) ; Char = 'Clippy' ),
-	     (	  call(Generator, id(ID)) ; ID = agent),
+             (	  call(Generator, character(Char)) ;
+                  Char = 'Clippy'
+             ),
 	     member(Char , ['Clippy', 'Merlin', 'Rover', 'Links'])
         },
 	html([

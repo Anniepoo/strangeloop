@@ -13,19 +13,13 @@
 %	succeeds if our version is 6.4.1 or better
 %
 reasonable_version :-
-	current_prolog_flag(version_data, swi(Major, _, _, _)),
-	Major > 6.
-reasonable_version :-
-	current_prolog_flag(version_data, swi(6, Minor, _, _)),
-	Minor > 3.
-reasonable_version :-
-	current_prolog_flag(version_data, swi(6, 3, Patch, _)),
-	Patch > 18.
+	current_prolog_flag(version, V),
+	V >= 80003.
 
 check_version :- reasonable_version, !.
 check_version :-
       current_prolog_flag(version_data, swi(Major, Minor, Patch, _)),
-      format('OOOPS - you need swipl version 6.4.1 or better, you are on ~w.~w.~w~n',
+      format('OOOPS - you need swipl version 8.0.3 or better, you are on ~w.~w.~w~n',
 	[Major, Minor, Patch]).
 
 :- check_version.
@@ -91,10 +85,6 @@ http:location(pldoc, root('help/source'), [priority(10)]).
 
 % and the workshop page
 :-www_open_url('http://localhost:7777/workshop').
-
-
-% and bring up a module in the editor
-:- edit('debug.pl').
 
 % open the navigator and the cross referencer
 % put it in module user so programmer doesn't have to
